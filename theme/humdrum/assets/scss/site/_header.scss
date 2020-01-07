@@ -1,0 +1,10 @@
+
+.header {
+    width           : 100%;
+    height          : auto;
+    min-height      : 40px;
+    background-color: $dark-neutral-color;
+    @include responsive-small {
+        min-height      : 50px;
+    }
+}

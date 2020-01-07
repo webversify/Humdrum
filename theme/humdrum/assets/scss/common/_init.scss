@@ -1,0 +1,186 @@
+
+body, html {
+	margin          : 0;
+	padding         : 0;
+	font-family     : $content-font;
+	color           : $dark-color;
+	background-color: $secondary-color;
+	@include responsive-medium {
+		font-size : 14px;
+		padding-bottom: 30px;
+	}
+	@include responsive-small {
+		font-size: 12px;
+	}
+}
+
+ul {
+	padding    : 0;
+	margin     : 0;
+	& > li {
+		list-style : none;
+		display    : block;
+		padding    : 0;
+		margin     : 0;
+		&.inline-list {
+			width: auto;
+		    display: inline-block;
+		}
+	}
+}
+
+h1, h2, h3, h4 {
+	color      : $light-neutral-color;
+	font-family: $heading-font;
+}
+
+a {
+	color: $secondary-color;
+	text-decoration: none;
+	@include hover {
+		@include animation(0.5);
+		color: $primary-color;
+	}
+}
+
+/* Utilities */
+
+.box-sizing {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing   : border-box;
+    box-sizing        : border-box;
+}
+
+.container {
+	@extend .box-sizing;
+	position  : relative;
+	width     : $content-width;
+	height    : auto;
+	min-height: 5px;
+	margin    : 0px auto;
+	@include responsive-large {
+		width: 100%;
+	}
+	@include responsive-medium {
+		width: 100%;
+	}
+	@include responsive-small {
+		width: 100%;
+	}
+}
+
+.center-block-horizontal {
+	margin    : 0px auto;
+	text-align: center;
+}
+
+.center-block-vertical {
+	position     : absolute;
+	top          : 50%;
+	-ms-transform: translateY(-50%);
+	transform    : translateY(-50%);
+}
+
+.center-block-hv {
+	position     : absolute;
+	top          : 50%;
+	left         : 50%;
+	-ms-transform: translate(-50%, -50%);
+  	transform    : translate(-50%, -50%);
+}
+
+.uncenter-block {
+	position     : relative;
+	top          : auto;
+	left         : auto;
+	-ms-transform: none;
+  	transform    : none;
+}
+
+.response {
+	font-family: $content-font;
+	font-size  : 18px;
+	font-weight: bold;
+}
+.empty {
+	color: $light-neutral-color;
+}
+.error {
+	color: $error-color;
+}
+.success {
+	color: $success-color;
+}
+
+.hide {
+	display: none;
+}
+
+.fade-out {
+	opacity: 0;
+	&.fast {
+		@include animation(0.1);
+	}
+	&.normal {
+		@include animation(0.3);
+	}
+	&.slow {
+		@include animation(0.6);
+	}
+}
+
+.fade-in {
+	opacity: 1;
+	&.fast {
+		@include animation(0.1);
+	}
+	&.normal {
+		@include animation(0.3);
+	}
+	&.slow {
+		@include animation(0.6);
+	}
+}
+
+/* Forms */
+
+select,
+textarea,
+input[type='text'],
+input[type='email'],
+input[type='phone'],
+input[type='password'] {
+	@extend .box-sizing;
+	width         : 100%;
+	height        : auto;
+	padding       : 10px;
+	font-size     : 20px;
+	border        : 1px solid rgba($light-neutral-color, 0.6);
+	border-radius : 3px;
+	outline       : none;
+}
+textarea {
+	min-height: 120px
+}
+
+.button,
+button {
+	@extend .box-sizing;
+	width           : auto;
+	min-width       : 30%;
+	height          : auto;
+	padding         : 10px;
+	font-size       : 20px;
+	color           : $light-color;
+	border          : 1px solid $dark-neutral-color;
+	border-radius   : 3px;
+	background-color: $primary-color;
+	outline         : none;
+	@include responsive-medium {
+		font-size: 18px;
+	}
+	@include responsive-small {
+		padding  : 8px;
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,34 @@
+
+/* Font Import Config */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu&display=swap');
+
+/* Color Configs */
+
+$primary-color       : #03A9F4;
+$secondary-color     : #353335;
+
+$dark-color          : #000000;
+$light-color         : #FFFFFF;
+
+$dark-neutral-color  : #696969;
+$light-neutral-color : #A8A8A8;
+
+$success-color       : #6B8E23;
+$error-color         : #B22222;
+
+/* Font Configs */
+
+$content-font        : "Montserrat", sans-serif;
+$heading-font        : "Ubuntu", sans-serif;
+
+/* Content Display */
+
+$content-width         : 1440px;
+$laptop-width          : 1200px;
+$mobile-width          : 600px;
+
+/* Breakpoint Display */
+
+$responsive-breakpoint : 600px;
+$laptop-breakpoint     : 1460px;

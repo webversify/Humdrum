@@ -1,0 +1,43 @@
+
+.app-logo {
+    @extend .center-block-horizontal;
+    margin-top   : 70px;
+    margin-bottom: 10px;
+    @include responsive-medium {
+        & > img {
+    		width: 50%;
+    	}
+    }
+    @include responsive-small {
+        & > img {
+    		width: 90%;
+    	}
+    }
+}
+.app-logo-small {
+    @extend .center-block-horizontal;
+    & > img {
+        width        : 150px;
+        height       : auto;
+        margin       : 20px 0;
+        margin-bottom: 10px;
+        @include responsive-medium {
+            width: 20%;
+        }
+        @include responsive-small {
+            width: 30%;
+        }
+    }
+}
+.app-description {
+    @extend .center-block-horizontal;
+    color      : $dark-neutral-color;
+    font-family: $content-font;
+    font-size  : 30px;
+    @include responsive-medium {
+        font-size  : 18px;
+    }
+    @include responsive-small {
+        font-size  : 20px;
+    }
+}

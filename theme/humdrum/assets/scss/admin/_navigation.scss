@@ -1,0 +1,44 @@
+
+.sidebar {
+    position        : absolute;
+    left            : 0;
+    width           : 250px;
+    height          : auto;
+    min-width       : 250px;
+    min-height      : 100%;
+    background-color: rgba($light-neutral-color, 0.3);
+    @include responsive-medium {
+        display: none;
+    }
+    @include responsive-small {
+        display: none;
+    }
+    ul {
+        @extend .box-sizing;
+        width: 100%;
+        margin: 20px 0;
+        li {
+            @extend .box-sizing;
+            width           : 100%;
+            padding         : 10px 10px;
+            margin          : 2px 0;
+            background-color: rgba($light-neutral-color, 0.5);
+            font-weight     : bold;
+            @include hover {
+                color           : $light-color;
+                background-color: rgba($primary-color, 0.9);
+                @include animation(0.5);
+            }
+            &.active {
+                color           : $light-color;
+                background-color: rgba($primary-color, 0.9);
+            }
+            & > .app-icon {
+                display   : inline-block;
+                width     : 40px;
+                height    : auto;
+                text-align: center;
+            }
+        }
+    }
+}

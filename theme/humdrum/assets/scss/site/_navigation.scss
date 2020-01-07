@@ -1,0 +1,81 @@
+
+ul.topbar-navs {
+    @include responsive-small {
+        display: none;
+    }
+    & > li {
+        padding: 10px 15px;
+        @include responsive-medium {
+            padding: 10px 10px;
+        }
+        & > a {
+            color          : $light-neutral-color;
+            text-decoration: none;
+            padding-bottom : 9px;
+            @include hover {
+                color        : $light-color;
+                border-bottom: 2px solid $light-color;
+            }
+            &.active {
+                color        : $light-color;
+                border-bottom: 2px solid $light-color;
+            }
+            @include animation(0.5);
+        }
+        &.user-sign-in {
+            float         : right;
+            display       : inline;
+            & > a > .sign-in-icon {
+                background-image : url('../../../../theme/humdrum/images/sign-in.png');
+                &.active {
+                    background-image : url('../../../../theme/humdrum/images/sign-in-hover.png');
+                }
+            }
+            @include hover() {
+                & > a > .sign-in-icon {
+                    background-image : url('../../../../theme/humdrum/images/sign-in-hover.png');
+                    @include animation(0.5);
+                }
+            }
+        }
+    }
+}
+
+span.sign-in-icon {
+    float            : left;
+    display          : inline;
+    width            : 25px;
+    height           : 25px;
+    margin-right     : 3px;
+    background-repeat: no-repeat;
+}
+
+div.mobile-nav {
+    display: none;
+    @include responsive-small {
+        display: block;
+        float  : right;
+        width  : 10%;
+        height : inherit;
+        margin : 10px 20px;
+        span.bar1, span.bar2, span.bar3 {
+            display         : block;
+            width           : 40px;
+            height          : 4px;
+            margin          : 5px 0;
+            background-color: $light-color;
+            @include animation(0.4);
+        }
+        &.change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+        &.change .bar2 {
+            opacity: 0;
+        }
+        &.change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-7px, -7px);
+            transform: rotate(45deg) translate(-7px, -7px);
+        }
+    }
+}

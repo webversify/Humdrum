@@ -1,0 +1,53 @@
+
+.app-form {
+        @extend .center-block-hv;
+        @extend .box-sizing;
+        margin-top   : 10%;
+        width        : 50%;
+        height       : auto;
+        min-height   : 100px;
+        border       : 1px solid $light-neutral-color;
+        border-radius: 5px;
+        background-color: rgba($light-color, 0.9);
+        @include responsive-medium {
+            @extend .center-block-horizontal;
+            @extend .uncenter-block;
+            margin-top: 5%;
+            width     : 80%;
+        }
+        @include responsive-small {
+            @extend .center-block-horizontal;
+            @extend .uncenter-block;
+            margin-top: 20%;
+            width     : 95%;
+        }
+        li {
+            margin : 8px 0;
+            padding: 0 20px;
+            @include responsive-medium {
+                padding: 0 10px;
+            }
+            @include responsive-small {
+                padding: 0 10px;
+            }
+            &.form-button {
+                margin: 20px 0;
+                @include responsive-medium {
+                    margin: 10px 0;
+                }
+                @include responsive-small {
+                    margin: 15px 0;
+                }
+            }
+            &.form-links {
+                padding   : 10px 30px 20px 10px;
+                text-align: right;
+                @include responsive-medium {
+                    padding   : 5px 20px 5px 10px;
+                }
+                @include responsive-small {
+                    padding   : 5px 10px 5px 10px;
+                }
+            }
+        }
+}

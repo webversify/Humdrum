@@ -1,0 +1,86 @@
+
+@mixin below($belowAmount) {
+    @media screen and (max-width: $belowAmount - 1px) {
+		@content;
+	}
+}
+
+@mixin responsive-large {
+    @include below($laptop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin responsive-medium {
+    @include below($laptop-width) {
+        @content;
+    }
+}
+
+@mixin responsive-small {
+    @include below($mobile-width) {
+        @content;
+    }
+}
+
+@mixin hover {
+    &:hover {
+        @content;
+    }
+    &:focus {
+        @content;
+    }
+    &:active {
+        @content;
+    }
+}
+
+@mixin animation($speed) {
+    @if type-of($speed) != number {
+        -webkit-transition : none;
+        -moz-transition    : none;
+        -o-transition      : none;
+        transition         : none;
+    } @else {
+        -webkit-transition : all #{$speed}s ease;
+        -moz-transition    : all #{$speed}s ease;
+        -o-transition      : all #{$speed}s ease;
+        transition         : all #{$speed}s ease;
+    }
+}
+
+@mixin delay($speed) {
+    @if type-of($speed) != number {
+        -webkit-transition-delay : none;
+        -moz-transition-delay    : none;
+        -o-transition-delay      : none;
+        transition-delay         : none;
+    } @else {
+        -webkit-transition-delay : #{$speed}s;
+        -moz-transition-delay    : #{$speed}s;
+        -o-transition-delay      : #{$speed}s;
+        transition-delay         : #{$speed}s;
+    }
+}
+
+@mixin horizontal-gradient($from: $light-color, $to: rgba($primary-color, 0.8), $stop: 100%) {
+  background-color: $from;
+  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+  background: -ms-linear-gradient(left, $from 0%, $to $stop);
+  background: linear-gradient(to right, $from 0%, $to $stop);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+
+@mixin vertical-gradient($startColor: $light-color, $endColor: rgba($primary-color, 0.8)) {
+  background-color: mix($startColor, $endColor, 60%);
+  background-image: -moz-linear-gradient(top, $startColor, $endColor);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor));
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+  background-image: -o-linear-gradient(top, $startColor, $endColor);
+  background-image: linear-gradient(to bottom, $startColor, $endColor);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($startColor)}', endColorstr='#{ie-hex-str($endColor)}', GradientType=0); // IE9 and down
+}

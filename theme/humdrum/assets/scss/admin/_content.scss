@@ -1,0 +1,535 @@
+
+body, html {
+    background-color: $light-color;
+}
+
+.content {
+    @extend .box-sizing;
+    float      : left;
+    margin-left: 250px;
+    width      : calc(100% - 250px);
+    padding    : 10px;
+    @include responsive-medium {
+        float : none;
+        margin: 0px auto;
+        width : 100%;
+    }
+    @include responsive-small {
+        float : none;
+        margin: 0px auto;
+        width : 100%;
+    }
+    h2 {
+        padding   : 0 10px;
+        margin    : 10 0;
+        font-size : 25px;
+        color     : $dark-neutral-color;
+        @include responsive-large {
+            font-size: 20px;
+        }
+        @include responsive-medium {
+            font-size: 20px;
+        }
+        @include responsive-small {
+            padding  : 10px 5px;
+            font-size: 14px;
+        }
+        i {
+            padding: 0 10px;
+            color  : $light-neutral-color;
+            @include responsive-medium {
+                padding: 0 10px;
+            }
+            @include responsive-small {
+                padding: 0 10px;
+            }
+        }
+        .app-site-page {
+            color: $dark-neutral-color;
+            font-style: italic;
+        }
+        .app-names {
+            color: $dark-neutral-color;
+            font-style: italic;
+        }
+        .app-records {
+            font-style: italic;
+            color: $primary-color;
+        }
+        .uuid-tag {
+            @include responsive-small {
+                display: block;
+                margin-top: 10px;
+            }
+        }
+    }
+    .content-wrapper {
+        @extend .box-sizing;
+        border       : 1px solid rgba($light-neutral-color, 0.9);
+        border-radius: 3px;
+        padding      : 10px;
+        width        : 100%;
+        ul {
+            @extend .box-sizing;
+            display      : block;
+            margin       : 0px auto;
+            width        : 100%;
+            @include responsive-medium {
+                width  : 100%;
+                padding: 5px;
+            }
+            @include responsive-small {
+                width  : 100%;
+                padding: 0;
+            }
+            &.heading-list {
+                display: inline-flex;
+                @include responsive-small {
+                    display: none;
+                }
+            }
+            & > li {
+                width           : inherit;
+                height          : auto;
+                padding         : 10px;
+                background-color: rgba($light-neutral-color, 0.19);
+                margin-bottom   : 2px;
+                padding: 0;
+                margin: 0;
+                @include responsive-large {
+                    width: auto;
+                }
+                @include responsive-medium {
+                    width: auto;
+                }
+                @include responsive-small {
+                    width: auto;
+                }
+                @include hover {
+                    &:not(.app-headings):not(.app-edit-item){
+                        z-index: 999;
+                        background-color: rgba($primary-color, 0.1);
+                        @include animation(0.5);
+                    }
+                }
+                &.app-columns {
+                    @extend .box-sizing;
+                    width           : inherit;
+                    text-align      : center;
+                    color           : $dark-color;
+                    background-color: rgba($light-neutral-color, 0.2);
+                    font-weight     : bold;
+                    padding         : 10px 0;
+                    &.list-switch {
+                        width     : 30rem;
+                    }
+                    &.list-icon {
+                        width     : 30rem;
+                    }
+                    &.list-position {
+                        width     : 30rem;
+                    }
+                    &.list-options {
+                        width     : 30rem;
+                        text-align: center;
+                    }
+                    &.list-positioning {
+                        width     : 10rem;
+                        text-align: center;
+                    }
+                    .app-title-responsive {
+                        display: none;
+                        @include responsive-small {
+                            display    : inline-block;
+                            text-align: right;
+                            width      : 20%;
+                            font-size  : 12px;
+                            font-weight: lighter;
+                            padding    : 0px 10px;
+                        }
+                    }
+                    .option-child-button {
+                        float       : right;
+                        margin-right: 10px;
+                        color       : $light-neutral-color;
+                        @include hover() {
+                            @extend .success;
+                        }
+                        @include responsive-small {
+                            font-size: 20px;
+                        }
+                    }
+                }
+                &.app-rows {
+                    width         : inherit;
+                    height        : inherit;
+                    margin        : 2px 0;
+                    vertical-align: top;
+                    @include responsive-small {
+                        margin: 5px 0;
+                    }
+                    ul.inline-items {
+                        display: inline-flex;
+                        width  : inherit;
+                        @include responsive-small {
+                            display: block;
+                        }
+                        & > li {
+                            @extend .box-sizing;
+                            width     : inherit;
+                            padding   : 10px 0;
+                            text-align: center;
+                            &.list-switch {
+                                width     : 30rem;
+                                @include responsive-small {
+                                    font-size: 20px;
+                                    width: 100%;
+                                }
+                            }
+                            &.list-icon {
+                                width     : 30rem;
+                                @include responsive-small {
+                                    width: 100%;
+                                }
+                            }
+                            &.list-position {
+                                width     : 30rem;
+                                @include responsive-small {
+                                    width: 100%;
+                                }
+                            }
+                            &.list-textbox{
+                                 text-align: left;
+                                 span {
+                                     margin-left: 20px;
+                                     @include responsive-small {
+                                         margin-left: 0px;
+                                     }
+                                 }
+                            }
+                            &.list-text {
+                                 text-align: left;
+                                 span {
+                                     margin-left: 20px;
+                                     @include responsive-small {
+                                         margin-left: 0px;
+                                     }
+                                 }
+                            }
+                            &.list-select {
+                                 text-align: left;
+                                 span {
+                                     margin-left: 20px;
+                                     @include responsive-small {
+                                         margin-left: 0px;
+                                     }
+                                 }
+                            }
+                            &.list-options {
+                                width     : 30rem;
+                                text-align: center;
+                                i {
+                                    margin: 0 5px;
+                                    &.option-edit {
+                                        color: $light-neutral-color;
+                                        @include hover() {
+                                            @extend .success;
+                                        }
+                                        @include responsive-small {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                    &.option-delete {
+                                        color: $light-neutral-color;
+                                        @include hover() {
+                                            @extend .error;
+                                        }
+                                        @include responsive-small {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                                @include responsive-small {
+                                    text-align: right;
+                                    padding-right: 20px;
+                                    width: 100%;
+                                }
+                            }
+                            &.list-positioning {
+                                width     : 10rem;
+                                text-align: center;
+                                i {
+                                    margin: 0;
+                                    font-size: 12px;
+                                    &.option-position {
+                                        cursor: move;
+                                        color: rgba($light-neutral-color, 0.5);
+                                        @include responsive-small {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                                @include responsive-small {
+                                    text-align: right;
+                                    padding-right: 20px;
+                                    width: 100%;
+                                }
+                            }
+                            @include responsive-small {
+                                text-align  : left;
+                                padding-left: 20px;
+                                font-size   : 15px;
+                            }
+                            .app-form-item {
+                                @include responsive-small {
+                                    padding-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                    div.app-item {
+                        @extend .box-sizing;
+                        padding: 15px 0;
+                        margin : 2px 0;
+                        width  : calc(100% - 20px);
+                        @include responsive-large {
+                            padding: 1rem;
+                            width: 100%;
+                        }
+                        @include responsive-small {
+                            margin: 0px auto;
+                        }
+                        & > span.title {
+                            @extend .box-sizing;
+                            display       : inline-block;
+                            width         : 10%;
+                            color         : rgba($secondary-color, 0.4);
+                            text-align    : right;
+                            margin-right  : 15px;
+                            vertical-align: top;
+                            @include responsive-large {
+                                width        : 15%;
+                                text-align   : right;
+                                margin-bottom: 3px;
+                            }
+                            @include responsive-medium {
+                                width        : 15%;
+                                text-align   : right;
+                                margin-bottom: 3px;
+                            }
+                            @include responsive-small {
+                                display      : block;
+                                width        : 100%;
+                                text-align   : left;
+                                margin-bottom: 3px;
+                            }
+                        }
+                        & > span.data {
+                            @extend .box-sizing;
+                            display    : inline-block;
+                            width      : calc(90% - 15px);
+                            color      : $dark-color;
+                            text-align : left;
+                            @include responsive-large {
+                                width   : 82%;
+                            }
+                            @include responsive-medium {
+                                width   : 82%;
+                            }
+                            @include responsive-small {
+                                display     : block;
+                                padding-left: 0.5rem;
+                                width       : 100%;
+                                font-size   : 1.1rem;
+                                i {
+                                    margin-top: 5px;
+                                    font-size: 3em;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:first-child {
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
+                }
+                &:last-child {
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                }
+                &:nth-child(odd) {
+                    background-color: rgba($light-neutral-color, 0.1);
+                }
+            }
+        }
+    }
+    .paging-wrapper {
+        @extend .box-sizing;
+        width : 100%;
+        margin: 15px 0;
+        ul {
+            display   : block;
+            width     : inherit;
+            text-align: center;
+            li {
+                margin          : 0px auto;
+                display         : inline-block;
+                width           : auto;
+                min-width       : 0.5rem;
+                padding         : 8px 8px;
+                margin          : 3px;
+                font-weight     : bold;
+                color           : rgba($dark-neutral-color, 0.9);
+                background-color: rgba($light-neutral-color, 0.4);
+                border          : 1px solid rgba($dark-neutral-color, 0.6);
+                border-radius   : 3px;
+                @include hover {
+                    &:not(.inactive) {
+                    color: $light-color;
+                    background-color: $primary-color;
+                    }
+                }
+                &.active {
+                    color: $light-color;
+                    background-color: $primary-color;
+                }
+                &.inactive {
+                    opacity: 0.8;
+                    -moz-opacity: 0.8;
+                    -webkit-opacity: 0.8;
+                }
+                i {
+                    margin: 0;
+                    margin: 2px 0;
+                }
+            }
+        }
+    }
+    .dashboard-wrapper {
+        @extend .box-sizing;
+        margin: 0px auto;
+        width : 99%;
+        height: auto;
+        padding: 20px;
+        @include responsive-small {
+            width : 100%;
+        }
+        & > ul {
+            display   : inline-flex;
+            width     : inherit;
+            text-align: center;
+            @include responsive-medium {
+                display: block;
+            }
+            @include responsive-small {
+                display: block;
+            }
+            & > li {
+                @extend .box-sizing;
+                position     : relative;
+                width        : inherit;
+                height       : 200px;
+                border       : 1px solid rgba($light-neutral-color, 0.6);
+                border-radius: 3px;
+                margin       : 10px;
+                @include vertical-gradient($light-color, rgba($light-neutral-color, 0.5));
+                @include responsive-medium {
+                    display      : inline-block;
+                    width        : 45%;
+                    margin-bottom: 20px;
+                }
+                @include responsive-small {
+                    width        : 100%;
+                    margin       : 0px;
+                    margin-bottom: 20px;
+                }
+                i {
+                    color  : $primary-color;
+                    margin : 10px 0;
+                    display: block;
+                }
+                span {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color    : $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.app-button {
+    @extend .box-sizing;
+    text-align      : right;
+    padding         : 0 20px;
+    background-color: transparent;
+    button {
+        width    : auto;
+        min-width: 80px;
+        font-size: 16px;
+        cursor   : pointer;
+        margin: 20px 5px;
+        @include hover {
+            color: $light-color;
+        }
+    }
+}
+
+.app-delete {
+    background-color: $light-color !important;
+    @include hover {
+        background-color: $light-color !important;
+    }
+    & > i {
+        margin-top   : 100px;
+        margin-bottom: 10px;
+        color        : $error-color;
+        @include responsive-small {
+            margin-top   : 50px;
+            margin-bottom: 0;
+            padding      : 0 inherit;
+        }
+    }
+    & > h2 {
+        font-size     : 35px;
+        margin-bottom : 0;
+        color         : $error-color;
+        @include responsive-small {
+            font-size    : 25px;
+            padding       : 0 inherit;
+        }
+    }
+    & > .delete-buttons {
+        margin: 30px 0;
+        margin-bottom: 100px;
+        & > button {
+            width    : 10%;
+            min-width: 10%;
+            margin   : 0 20px;
+            cursor   : pointer;
+        }
+        @include responsive-small {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.app-error {
+    @extend .box-sizing;
+    @extend .center-block-vertical;
+    width     : calc(85% - 100px);
+    text-align: center;
+    top       : 35%;
+    @include responsive-medium {
+        top   : 30%;
+        width : calc(100% - 20px);
+    }
+    @include responsive-small {
+        top   : 40%;
+        width : calc(100% - 20px);
+    }
+    h2 {
+        font-size: 30px;
+        color    : $dark-neutral-color;
+    }
+}
